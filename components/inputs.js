@@ -5,7 +5,7 @@ export const InputBox = ({ value = "", onChange, classBox = "", classInput = "",
     return (
         <div className={`${classBox}`}>
             <input
-                className={`${classInput} rounded-xl px-2 py-[13px] outline-none w-full text-brown border-2`}
+                className={`${classInput} rounded-xl px-2 py-[13px] outline-none w-full text-black border-2`}
                 type={password ? 'password' : 'text'}
                 value={value}
                 onChange={(e) => onChange ? onChange(number ? e.target.value.replace(/[^0-9]/g, '') : e.target.value) : {}}
@@ -15,10 +15,25 @@ export const InputBox = ({ value = "", onChange, classBox = "", classInput = "",
     );
 };
 
+export const InputTextArea = ({ value = "", onChange, classBox = "", placeholder = "", number = null, cols, rows }) => {
+    return (
+        <div className={`${classBox}`}>
+            <textarea
+                cols={cols}
+                rows={rows}
+                placeholder={placeholder}
+                className={`border-2 rounded-xl px-2 py-[13px] outline-none w-full text-black`}
+                onChange={(e) => onChange ? onChange(number ? e.target.value.replace(/[^0-9]/g, '') : e.target.value) : {}}
+                value={value}
+            />
+        </div>
+    );
+};
+
 export const InputSelect = ({ value = "", onChange, classInput = "", classBox = "", placeholder = "", options = [] }) => {
     return (
         <div className={`${classBox} cursor-pointer`}>
-            <select value={value} onChange={(e) => onChange ? onChange(e.target.value) : {}} className={`${classInput} cursor-pointer rounded-xl border-2 px-2 py-[14px] outline-none w-full ${value ? 'text-brown': 'text-gray-400 focus:text-brown '}`}>
+            <select value={value} onChange={(e) => onChange ? onChange(e.target.value) : {}} className={`${classInput} cursor-pointer rounded-xl border-2 px-2 py-[14px] outline-none w-full ${value ? 'text-black': 'text-gray-400 focus:text-black '}`}>
                 {placeholder && <option value={null}>{placeholder}</option>}
                 {options?.map((option, index) => (
                     <option key={"Option-" + index} value={option?.id}>{option?.name}</option>
