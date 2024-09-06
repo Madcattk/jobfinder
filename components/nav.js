@@ -38,7 +38,7 @@ const nav = ({children}) => {
                 <div className="group relative invisible md:visible">
                     <div onMouseOver={() => setMenu(false)} className="menu-hover cursor-pointer">Login</div>
                     <div className="absolute left-0 top-6 bg-white border rounded z-50 invisible group-hover:visible flex flex-col items-center">
-                    <div className="p-3 hover:bg-lightblue hover:rounded-t hover:text-white cursor-pointer transition-colors duration-200">
+                    <div onClick={() => router.push("/applicant/login")} className="p-3 hover:bg-lightblue hover:rounded-t hover:text-white cursor-pointer transition-colors duration-200">
                         Applicant
                     </div>
                     <div className="p-3 hover:bg-lightblue hover:rounded-b hover:text-white cursor-pointer transition-colors duration-200">
@@ -64,7 +64,8 @@ const nav = ({children}) => {
                 className="cursor-pointer hover:underline">
                     Explore Companies
                 </div>
-                <div className="cursor-pointer hover:underline">Applicant</div>
+                <div onClick={() => router.push("/applicant/login")}
+                className="cursor-pointer hover:underline">Applicant</div>
                 <div className="cursor-pointer hover:underline">Employer</div>
                 </div>
             )}
