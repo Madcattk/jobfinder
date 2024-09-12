@@ -29,7 +29,9 @@ const page = () => {
                 icon={password ? faEyeSlash : faEye} 
                 className='absolute top-4 right-3 hover:cursor-pointer' size='xl' color='lightgray'/>
             </div>
-            <ButtonText placeholder='Login' classBox='w-full flex justify-center' classInput='w-full'/>
+            <ButtonText
+            onClick={() => router.push("/applicant/profile")}
+            placeholder='Login' classBox='w-full flex justify-center' classInput='w-full'/>
             <span className='w-full text-right cursor-pointer text-xs hover:underline'>Forgot password?</span>
             <ButtonText
             onClick={() => router.push("/applicant/register")}
